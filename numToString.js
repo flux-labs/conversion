@@ -1,27 +1,29 @@
 'use strict';
 
 /**
- * Code block template.
+ * Convert a number to a string
+ * @param {Num} number to convert
  *
+ * @return {String} string representation of the number
  */
-function run(num) {
-	if (typeof num === "number") {
-		var string = num.toString();
-		return {string:string};
+function run(Num) {
+	if (typeof Num === "number") {
+		var string = Num.toString();
+		return {String:string};
 	}
-	else if (Array.isArray(num)===true) {
+	else if (Array.isArray(Num)===true) {
 		var array = [];
 		var i;
-		for (i=0; i<num.length; i++) {
-			if (num[i] === null) {
+		for (i=0; i<Num.length; i++) {
+			if (Num[i] === null) {
 				array[i] = null
 			}
 			else {
-				array[i] = num[i].toString();
+				array[i] = Num[i].toString();
 			}
 			
 		}
-		return {string:array}
+		return {String:array}
 	}
 	else {
 		return "Not a valid input. Please feed in a number or array.";
